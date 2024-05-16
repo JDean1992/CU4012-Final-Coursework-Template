@@ -7,11 +7,11 @@ Menu::Menu(sf::RenderWindow* hwnd, Input* in, GameState* game)
 	gameState = game;
 
 
-	UIfont.loadFromFile("font/ZOMBIES REBORN.ttf");
-	titleFont.loadFromFile("font/BloodBlocks Project.ttf");
+	UIfont.loadFromFile("font/Jersey15.ttf");
+	titleFont.loadFromFile("font/Bebas.ttf");
 
 
-	menu_texture.loadFromFile("gfx/menu.png");
+	menu_texture.loadFromFile("gfx/MenuBackground.jpg");
 	menu_sprite.setTexture(menu_texture);
 	
 	//Scaling the sprite to fit any screen 
@@ -30,25 +30,27 @@ Menu::Menu(sf::RenderWindow* hwnd, Input* in, GameState* game)
 
 	Title.setFont(titleFont);
 	Title.setFillColor(sf::Color::Magenta);
-	Title.setString("My Game");
+	Title.setString("Rave Digger");
 	Title.setOutlineColor(sf::Color::Black);
-	Title.setCharacterSize(70);
+	Title.setCharacterSize(150);
 	Title.setPosition(500, 50);
 
 
 	UIText[0].text.setFont(UIfont);
 	UIText[0].text.setFillColor(sf::Color::Red);
 	UIText[0].text.setString("Play");
-	UIText[0].text.setPosition(sf::Vector2f(600,120));
-	UIText[0].setCollisionBox(sf::FloatRect(600, 135, 35, 15));
+	UIText[0].text.setCharacterSize(70);
+	UIText[0].text.setPosition(sf::Vector2f(600,210));
+	UIText[0].setCollisionBox(sf::FloatRect(600, 210, 65, 15));
 
 
 
 	UIText[1].text.setFont(UIfont);
 	UIText[1].text.setFillColor(sf::Color::White);
 	UIText[1].text.setString("Exit");
-	UIText[1].text.setPosition(sf::Vector2f(600,150));
-	UIText[1].setCollisionBox(sf::FloatRect(600, 165, 35, 15));
+	UIText[1].text.setCharacterSize(70);
+	UIText[1].text.setPosition(sf::Vector2f(600,250));
+	UIText[1].setCollisionBox(sf::FloatRect(600, 250, 65, 15));
 
 
 
@@ -73,11 +75,11 @@ void Menu::update(float dt)
 	Title.setPosition(windowSize.x / 2 - Title.getGlobalBounds().width / 2, 50);
 
 
-	UIText[0].text.setPosition(sf::Vector2f(windowSize.x / 2 - UIText[0].text.getGlobalBounds().width / 2, 120));
-	UIText[0].setCollisionBox(sf::FloatRect(windowSize.x / 2 - UIText[0].text.getGlobalBounds().width / 2, 135, 35, 15));
+	UIText[0].text.setPosition(sf::Vector2f(windowSize.x / 2 - UIText[0].text.getGlobalBounds().width / 2, 250));
+	UIText[0].setCollisionBox(sf::FloatRect(windowSize.x / 2 - UIText[0].text.getGlobalBounds().width / 2, 255, 65, 15));
 
-	UIText[1].text.setPosition(windowSize.x / 2 - UIText[1].text.getGlobalBounds().width / 2, 150);
-	UIText[1].setCollisionBox(sf::FloatRect(windowSize.x / 2 - UIText[1].text.getGlobalBounds().width / 2, 165, 35, 15));
+	UIText[1].text.setPosition(windowSize.x / 2 - UIText[1].text.getGlobalBounds().width / 2, 320);
+	UIText[1].setCollisionBox(sf::FloatRect(windowSize.x / 2 - UIText[1].text.getGlobalBounds().width / 2, 325, 65, 15));
 
 
 	// Update mouse position
